@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
@@ -16,6 +17,7 @@ import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 import { HomepagePageComponent } from './pages/homepage-page/homepage-page.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 
 
 const routes: Routes = [
@@ -32,9 +34,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    TasksListComponent,
     LoginPageComponent,
     SignupPageComponent,
-    HomepagePageComponent
+    HomepagePageComponent,
+    TasksPageComponent
   ],
   imports: [
     BrowserModule,
