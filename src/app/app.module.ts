@@ -12,12 +12,14 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
 import { AuthService } from './services/auth.service';
+import { TasksService } from './services/tasks.service';
 
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 import { HomepagePageComponent } from './pages/homepage-page/homepage-page.component';
 import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
+import { TaskCardComponent } from './components/task-card/task-card.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
   { path: 'login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'logout',  component: AppComponent, canActivate: [ RequireUserGuardService] },
+  { path: 'tasks-list',  component: TasksPageComponent, canActivate: [ RequireUserGuardService] },
 
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
@@ -38,7 +41,8 @@ const routes: Routes = [
     LoginPageComponent,
     SignupPageComponent,
     HomepagePageComponent,
-    TasksPageComponent
+    TasksPageComponent,
+    TaskCardComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,7 @@ const routes: Routes = [
   ],
   providers: [
     AuthService,
+    TasksService,
     InitAuthGuardService,
     RequireAnonGuardService,
     RequireUserGuardService

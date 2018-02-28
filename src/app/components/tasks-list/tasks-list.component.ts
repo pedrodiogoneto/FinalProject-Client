@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { TasksPageComponent } from '../../pages/tasks-page/tasks-page.component'
 
 @Component({
   selector: 'app-tasks-list',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent implements OnInit {
+
+  @Input() tasks: any;
 
   constructor() { }
 
