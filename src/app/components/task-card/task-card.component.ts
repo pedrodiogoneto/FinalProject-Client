@@ -8,7 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskCardComponent implements OnInit {
 
   @Input() task: any;
-  // @Input() index: any;
 
   constructor() { }
 

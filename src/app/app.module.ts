@@ -6,10 +6,15 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { NewTaskFormComponent } from './components/new-task-form/new-task-form.component';
+import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NewTaskPageComponent } from './pages/new-task-page/new-task-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+import { HomepagePageComponent } from './pages/homepage-page/homepage-page.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 
 import { AuthService } from './services/auth.service';
 import { TasksService } from './services/tasks.service';
@@ -17,9 +22,6 @@ import { TasksService } from './services/tasks.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
-import { HomepagePageComponent } from './pages/homepage-page/homepage-page.component';
-import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
-import { TaskCardComponent } from './components/task-card/task-card.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
   { path: 'signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuardService ] },
   { path: 'logout',  component: AppComponent, canActivate: [ RequireUserGuardService] },
   { path: 'tasks-list',  component: TasksPageComponent, canActivate: [ RequireUserGuardService] },
+  { path: 'new-task',  component: NewTaskPageComponent, canActivate: [ RequireUserGuardService] },
 
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
@@ -37,12 +40,14 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TasksListComponent,
     LoginPageComponent,
-    SignupPageComponent,
     HomepagePageComponent,
+    NewTaskPageComponent,
+    NewTaskFormComponent,
+    TasksListComponent,
     TasksPageComponent,
-    TaskCardComponent
+    TaskCardComponent,
+    SignupPageComponent
   ],
   imports: [
     BrowserModule,

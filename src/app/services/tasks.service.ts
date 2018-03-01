@@ -17,4 +17,18 @@ export class TasksService {
     .toPromise();
 }
 
+  createNew(data) {
+    const options = {
+      withCredentials: true
+    };
+    const newData = {
+      title: data
+    }
+    console.log(newData)
+    return this.httpClient.post(`${this.API_URL}/tasks`, newData, options)
+    .toPromise();
+
+  }
+
 }
+
