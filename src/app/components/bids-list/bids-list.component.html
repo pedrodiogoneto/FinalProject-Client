@@ -1,0 +1,13 @@
+<p>
+  bids-list works!
+</p>
+
+<div class="small-container">
+    <ul>
+      <li *ngFor='let bid of task.bids, index as i'> 
+        <b>Bids: User </b> {{ task.bids[i].bidder.username }} 
+        <b>Price </b> {{ task.bids[i].price }}
+      </li>
+    </ul>
+  </div>
+  

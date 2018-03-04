@@ -2,7 +2,7 @@
 <div class="small-container">
     <ul>
       <li> <b>Title: </b> {{ task.title }}</li>
-      <li><a [routerLink]="['/user', task.owner._id]" replaceUrl="false"><b>Owner: </b> {{ task.owner.username }} </a></li>
+      <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task.owner.username }} </a></li>
     </ul>
   </div>
   

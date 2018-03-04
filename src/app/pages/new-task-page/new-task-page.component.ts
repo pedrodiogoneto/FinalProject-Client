@@ -19,7 +19,7 @@ export class NewTaskPageComponent implements OnInit {
   createNewTask(event) {
     this.tasksService.createNew(event)
       .then((task) => this.tasks = task)
-      .then(() => { return this.router.navigate(['/'] });
+      .then(() => {return this.router.navigate(['/']});
 
   }
 

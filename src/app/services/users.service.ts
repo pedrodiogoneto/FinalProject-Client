@@ -9,7 +9,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser(id): Promise<any> {
+  getUser(id) {
     const options = {
       withCredentials: true
     };

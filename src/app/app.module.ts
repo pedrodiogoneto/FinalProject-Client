@@ -27,6 +27,7 @@ import { TasksService } from './services/tasks.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
+import { BidsListComponent } from './components/bids-list/bids-list.component';
 
 
 const routes: Routes = [
@@ -57,7 +58,8 @@ const routes: Routes = [
     UserProfilePageComponent,
     UserProfileComponent,
     TaskFullDetailsComponent,
-    TaskDetailsPageComponent
+    TaskDetailsPageComponent,
+    BidsListComponent
   ],
   imports: [
     BrowserModule,
