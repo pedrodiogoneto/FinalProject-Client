@@ -1,7 +1,12 @@
 
 <h2> {{ user?.username }} Profile</h2>
 
-<app-user-profile [user]="user" ></app-user-profile>
+<app-user-profile [user]="user"></app-user-profile>
 
 <h2> Tasks History </h2>
 
+<div *ngFor='let task of tasks; let i = index' [attr.data-index]='i'>
+    <ul>
+      <li><app-task-card [task]="task" [user]="user"></app-task-card></li>
+    </ul>
+</div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from '../../services/users.service';
+import { TasksService } from '../../services/tasks.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,17 +10,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserProfilePageComponent implements OnInit {
 
-  userId: any;
-  user: any;
-  
-  constructor(private usersService:  UsersService, private route: ActivatedRoute) { }
+  userId;
+  user;
+  tasks;
 
+  constructor(private usersService:  UsersService, private route: ActivatedRoute, private tasksService:  TasksService) { }
+  
   ngOnInit() {
     this.route.params
       .subscribe((params) => this.userId = String(params['id']));
-    this.usersService
-    .getUser(this.userId)
-    .then((user) => this.user = user)
+
+    this.usersService 
+      .getUser(this.userId)
+      .then((user) => this.user = user);
+
+    this.tasksService.getTaskByUser(this.userId)
+      .then(tasks => this.tasks = tasks);
+      
+    console.log(",ashgdf" + this.tasks);
+    console.log("userId: " + this.userId)
+    
   }
 
 }
+

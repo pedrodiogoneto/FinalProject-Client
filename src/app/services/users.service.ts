@@ -15,7 +15,6 @@ export class UsersService {
     };
     return this.httpClient.get(`${this.API_URL}/user/${id}`, options)
     .toPromise()
-    
   }
 
 }

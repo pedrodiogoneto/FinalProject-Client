@@ -30,5 +30,13 @@ export class TasksService {
 
   }
 
+  getTaskByUser(id) {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/tasks/user/${id}`, options)
+    .toPromise();
+  }
+
 }
 

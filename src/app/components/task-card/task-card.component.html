@@ -6,8 +6,9 @@
 <div class="small-container">
   <ul>
     <li> <b>Title: </b> {{ task.title }}</li>
-    <li> <b>Owner: </b> {{ task.owner.username }} </li>
+    <li><a [routerLink]="['/user', task.owner._id]" replaceUrl="false"><b>Owner: </b> {{ task.owner.username }} </a></li>
     <li *ngFor='let bid of task.bids; index as i'> <b>Bids: User </b> {{ task.bids[i].bidder.username }} 
       <b>Price </b> {{ task.bids[i].price }}</li>
   </ul>
 </div>
+
