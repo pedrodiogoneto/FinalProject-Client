@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { NewTaskFormComponent } from './components/new-task-form/new-task-form.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
+import { TaskFullDetailsComponent } from './components/task-full-details/task-full-details.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NewTaskPageComponent } from './pages/new-task-page/new-task-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { HomepagePageComponent } from './pages/homepage-page/homepage-page.component';
+import { TaskDetailsPageComponent } from './pages/task-details-page/task-details-page.component';
 import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
 
@@ -35,8 +37,7 @@ const routes: Routes = [
   { path: 'tasks-list',  component: TasksPageComponent, canActivate: [ RequireUserGuardService] },
   { path: 'new-task',  component: NewTaskPageComponent, canActivate: [ RequireUserGuardService] },
   { path: 'user/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService] },
-  
-
+  { path: 'task/:id',  component: TaskDetailsPageComponent, canActivate: [ RequireUserGuardService] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];
@@ -54,7 +55,9 @@ const routes: Routes = [
     TaskCardComponent,
     SignupPageComponent,
     UserProfilePageComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TaskFullDetailsComponent,
+    TaskDetailsPageComponent
   ],
   imports: [
     BrowserModule,

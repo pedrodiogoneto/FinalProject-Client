@@ -5,6 +5,12 @@
 
 <h2> Tasks History </h2>
 
+
+<!-- validation not working... review!!!! -->
+<div ng-if="user._id === activeUser._id">
+  <a [routerLink]="['/new-task']">Create a New Task</a>
+</div>
+
 <div *ngFor='let task of tasks; let i = index' [attr.data-index]='i'>
     <ul>
       <li><app-task-card [task]="task" [user]="user"></app-task-card></li>

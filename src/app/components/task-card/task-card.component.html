@@ -1,12 +1,8 @@
-<p>
-  task-card works!
-</p>
-
 
 <div class="small-container">
   <ul>
-    <li> <b>Title: </b> {{ task.title }}</li>
-    <li><a [routerLink]="['/user', task.owner._id]" replaceUrl="false"><b>Owner: </b> {{ task.owner.username }} </a></li>
+    <li><a [routerLink]="['/task', task._id]"><b>Title: </b> {{ task.title }} </a></li>
+    <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task.owner.username }} </a></li>
     <li *ngFor='let bid of task.bids; index as i'> <b>Bids: User </b> {{ task.bids[i].bidder.username }} 
       <b>Price </b> {{ task.bids[i].price }}</li>
   </ul>

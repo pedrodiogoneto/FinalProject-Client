@@ -37,6 +37,13 @@ export class TasksService {
     return this.httpClient.get(`${this.API_URL}/tasks/user/${id}`, options)
     .toPromise();
   }
-
+  
+  getTask(id) {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/tasks/${id}`, options)
+    .toPromise();
+  } 
 }
 

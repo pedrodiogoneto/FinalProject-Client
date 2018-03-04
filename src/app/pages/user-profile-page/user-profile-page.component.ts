@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { TasksService } from '../../services/tasks.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-profile-page',
@@ -13,8 +14,10 @@ export class UserProfilePageComponent implements OnInit {
   userId;
   user;
   tasks;
+  activeUser;
 
-  constructor(private usersService:  UsersService, private route: ActivatedRoute, private tasksService:  TasksService) { }
+  constructor(private usersService:  UsersService, private route: ActivatedRoute, 
+    private tasksService:  TasksService, private authService: AuthService) { }
   
   ngOnInit() {
     this.route.params
@@ -26,9 +29,13 @@ export class UserProfilePageComponent implements OnInit {
 
     this.tasksService.getTaskByUser(this.userId)
       .then(tasks => this.tasks = tasks);
+
+    this.authService.me()
+    .then((user) => this.activeUser = user); 
       
     console.log(",ashgdf" + this.tasks);
     console.log("userId: " + this.userId)
+    console.log("activeuser" + this.activeUser)
     
   }
 
