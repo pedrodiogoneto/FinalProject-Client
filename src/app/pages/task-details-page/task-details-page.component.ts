@@ -37,8 +37,7 @@ export class TaskDetailsPageComponent implements OnInit {
 
     this.tasksService.createNewBid(event, this.task)
       .then((bid) => this.bid = bid)
-      .then(() => {return this.router.navigate(['/']});
-
+      .then(() => this.router.navigate(['/']));
   }
 }
 
