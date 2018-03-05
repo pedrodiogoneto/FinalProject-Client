@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../services/users.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-homepage-page',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomepagePageComponent implements OnInit {
 
-  constructor(private usersService: UsersService, private route: ActivatedRoute) { }
+  constructor(private authService: AuthService, private route: ActivatedRoute) { }
 
   userId;
   user;
@@ -18,9 +18,9 @@ export class HomepagePageComponent implements OnInit {
     this.route.params
     .subscribe((params) => this.userId = String(params['id']));
 
-    // this.usersService 
-    //   .getUser(this.userId)
-    //   .then((user) => this.user = user);
+    this.authService 
+      .me()
+      .then((user) => this.user = user);
 
     console.log(this.userId);
   }

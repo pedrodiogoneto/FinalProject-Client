@@ -1,8 +1,12 @@
+<div *ngIf="!task">
+  Loading...
+</div>
 
+<div *ngIf="task">
 <div class="small-container">
     <ul>
-      <li> <b>Title: </b> {{ task.title }}</li>
-      <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task.owner.username }} </a></li>
+      <li> <b>Title: </b> {{ task?.title }}</li>
+      <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task?.owner.username }} </a></li>
     </ul>
   </div>
-  
+</div>

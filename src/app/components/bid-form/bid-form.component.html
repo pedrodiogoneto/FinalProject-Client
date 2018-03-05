@@ -1,12 +1,11 @@
-<h2>New Bid</h2>
 
 <form (ngSubmit)="handleClickNewBid(form)" #form="ngForm" novalidate>
-    <div>
-      <label for="price">Price</label>
-      <input type="text" name="price" [(ngModel)]="price" #priceField="ngModel" required [disabled]="processing"/>
-      <div *ngIf="feedbackEnabled && priceField.errors">
-        <p *ngIf="priceField.errors.required" class="validation">price required</p>
-      </div>
-    </div>  
-    <button type="submit">BID</button>
-  </form>
+  <div>
+    <label for="price">Price</label>
+    <input type="text" name="price" [(ngModel)]="price" #priceField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && priceField.errors">
+      <p *ngIf="priceField.errors.required" class="validation">price required</p>
+    </div>
+  </div>  
+  <button type="submit">BID</button>
+</form>

@@ -5,5 +5,5 @@
 <a href="/tasks-list">TaskList</a>
 <a href="/new-task">new-task</a>
 <div *ngIf="user">
-  <a [routerLink]="['/user']"> My Profile </a>
+  <a [routerLink]="['/user', user._id]"> My Profile </a>
 </div>

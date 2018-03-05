@@ -2,9 +2,14 @@
 
 <app-task-full-details [task]="task"></app-task-full-details>
 
-<h2> Bids History </h2>
+<div *ngIf="task?.owner._id === user?._id">
 
-<app-bids-list [task]="task"></app-bids-list>
+    <h2> Bids History </h2>
+    <app-bids-list [task]="task"></app-bids-list>
+</div>
 
+<div *ngIf="task?.owner._id !== user?._id">
+    <h2> New Bid </h2>
+    <app-bid-form (onNewBid)="newBid($event)"></app-bid-form>
+</div>
 
-<app-bid-form (onNewBid)="newBid($event)"></app-bid-form>
