@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'tasks-list',  component: TasksPageComponent, canActivate: [ RequireUserGuardService] },
   { path: 'new-task',  component: NewTaskPageComponent, canActivate: [ RequireUserGuardService] },
   { path: 'user/:id',  component: UserProfilePageComponent, canActivate: [ RequireUserGuardService] },
-  { path: 'task/:id',  component: TaskDetailsPageComponent, canActivate: [ RequireUserGuardService] },
+  { path: 'tasks/:id',  component: TaskDetailsPageComponent, canActivate: [ RequireUserGuardService] },
   // { path: 'page',  component: ... , canActivate: [ RequireUserGuardService ] },
   { path: '**', redirectTo: '' }
 ];

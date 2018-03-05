@@ -52,7 +52,7 @@ export class TasksService {
       withCredentials: true
     };
     const newData = {
-      price: data
+      price: data,
     }
     const id = task._id;
     return this.httpClient.post(`${apiUrl}/${id}`, newData, options)

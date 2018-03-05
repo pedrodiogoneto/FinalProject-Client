@@ -35,20 +35,18 @@ export class TaskDetailsPageComponent implements OnInit {
   }
 
   newBid(event) {
-    this.route.params
-      .subscribe((params) => this.taskId = String(params['id']));
+    // this.route.params
+    //   .subscribe((params) => this.taskId = String(params['id']));
 
-
-    this.tasksService 
-      .getTask(this.taskId)
-      .then((task) => this.task = task);
+    // this.tasksService 
+    //   .getTask(this.taskId)
+    //   .then((task) => this.task = task);
 
     this.tasksService.createNewBid(event, this.task)
-      .then((bid) => this.bid = bid)
-      .then(() => this.router.navigate(['/']));
-      
-    console.log("activeUser" + this.user._id);
-    console.log("task user" + this.task.owner._id);
+      .then((bid) => {
+        this.bid = bid;
+        this.router.navigate(['/']);
+      });
   }
 }
 
