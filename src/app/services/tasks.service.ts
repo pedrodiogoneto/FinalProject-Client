@@ -1,11 +1,12 @@
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
+const apiUrl = environment.apiUrl + '/tasks';
+
 @Injectable()
 export class TasksService {
-
-  private API_URL = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -13,7 +14,7 @@ export class TasksService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.API_URL}/tasks`, options)
+    return this.httpClient.get(`${apiUrl}`, options)
     .toPromise();
 }
 
@@ -25,7 +26,7 @@ export class TasksService {
       title: data
     }
     console.log(newData)
-    return this.httpClient.post(`${this.API_URL}/tasks`, newData, options)
+    return this.httpClient.post(`${apiUrl}`, newData, options)
     .toPromise();
 
   }
@@ -34,7 +35,7 @@ export class TasksService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.API_URL}/tasks/user/${id}`, options)
+    return this.httpClient.get(`${apiUrl}/user/${id}`, options)
     .toPromise();
   }
   
@@ -42,7 +43,7 @@ export class TasksService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.API_URL}/tasks/${id}`, options)
+    return this.httpClient.get(`${apiUrl}/${id}`, options)
     .toPromise();
   } 
 
@@ -54,7 +55,7 @@ export class TasksService {
       price: data
     }
     const id = task._id;
-    return this.httpClient.post(`${this.API_URL}/tasks/${id}`, newData, options)
+    return this.httpClient.post(`${apiUrl}/${id}`, newData, options)
     .toPromise();
   }
 }
