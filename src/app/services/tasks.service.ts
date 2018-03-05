@@ -45,5 +45,17 @@ export class TasksService {
     return this.httpClient.get(`${this.API_URL}/tasks/${id}`, options)
     .toPromise();
   } 
+
+  createNewBid(data, task) {
+    const options = {
+      withCredentials: true
+    };
+    const newData = {
+      price: data
+    }
+    const id = task._id;
+    return this.httpClient.post(`${this.API_URL}/tasks/${id}`, newData, options)
+    .toPromise();
+  }
 }
 

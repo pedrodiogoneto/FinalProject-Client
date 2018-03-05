@@ -7,9 +7,9 @@
 
 
 <!-- validation not working... review!!!! -->
-<div ng-if="user._id === activeUser._id">
+<!-- <div *ngIf="user._id === activeUser.id"> -->
   <a [routerLink]="['/new-task']">Create a New Task</a>
-</div>
+<!-- </div> -->
 
 <div *ngFor='let task of tasks; let i = index' [attr.data-index]='i'>
     <ul>

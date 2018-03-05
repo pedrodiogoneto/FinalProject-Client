@@ -23,13 +23,16 @@ export class UserProfilePageComponent implements OnInit {
     this.route.params
       .subscribe((params) => this.userId = String(params['id']));
 
+    this.usersService.getUser(this.userId)
+    .then((user) => this.user = user);
+
     this.tasksService.getTaskByUser(this.userId)
       .then(tasks => this.tasks = tasks);
 
     this.authService.me()
       .then((user) => this.activeUser = user); 
       
-    console.log(",ashgdf" + this.tasks);
+    console.log(",ashgdf" + this.user);
     console.log("userId: " + this.userId)
     console.log("activeuser" + this.activeUser)
     

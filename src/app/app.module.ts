@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { BidFormComponent } from './components/bid-form/bid-form.component';
+import { BidsListComponent } from './components/bids-list/bids-list.component';
 import { NewTaskFormComponent } from './components/new-task-form/new-task-form.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
@@ -27,7 +29,6 @@ import { TasksService } from './services/tasks.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
-import { BidsListComponent } from './components/bids-list/bids-list.component';
 
 
 const routes: Routes = [
@@ -59,7 +60,8 @@ const routes: Routes = [
     UserProfileComponent,
     TaskFullDetailsComponent,
     TaskDetailsPageComponent,
-    BidsListComponent
+    BidsListComponent,
+    BidFormComponent
   ],
   imports: [
     BrowserModule,

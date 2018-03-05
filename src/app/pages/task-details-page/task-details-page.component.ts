@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-task-details-page',
@@ -9,10 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TaskDetailsPageComponent implements OnInit {
 
-  constructor(private tasksService: TasksService, private route: ActivatedRoute) { }
+  constructor(private tasksService: TasksService, private route: ActivatedRoute, private router: Router) { }
 
   taskId;
   task;
+  bid;
 
   ngOnInit() {
     this.route.params
@@ -24,4 +27,18 @@ export class TaskDetailsPageComponent implements OnInit {
 
   }
 
+  newBid(event) {
+    this.route.params
+    .subscribe((params) => this.taskId = String(params['id']));
+
+    this.tasksService 
+    .getTask(this.taskId)
+    .then((task) => this.task = task);
+
+    this.tasksService.createNewBid(event, this.task)
+      .then((bid) => this.bid = bid)
+      .then(() => {return this.router.navigate(['/']});
+
+  }
 }
+
