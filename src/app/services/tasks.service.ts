@@ -58,5 +58,24 @@ export class TasksService {
     return this.httpClient.post(`${apiUrl}/${id}`, newData, options)
     .toPromise();
   }
+
+  createNewMessage(formData, taskId, bidId) {
+    const options = {
+      withCredentials: true
+    };
+    const newData = {
+      message: formData,
+    }
+    return this.httpClient.post(`${apiUrl}/${taskId}/bids/${bidId}`, newData, options)
+    .toPromise();
+  }
+
+  // getBidOfTask(taskId, bidId) {
+  //   const options = {
+  //     withCredentials: true
+  //   };
+  //   return this.httpClient.get(`${apiUrl}/${taskId}/bids/${bidId}`, options)
+  //   .toPromise();
+  // }
 }
 

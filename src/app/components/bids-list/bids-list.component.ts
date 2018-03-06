@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-bids-list',
   templateUrl: './bids-list.component.html',
@@ -13,4 +14,7 @@ export class BidsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  answearTobid() {
+
+  }
 }

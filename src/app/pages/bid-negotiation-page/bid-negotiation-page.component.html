@@ -1,0 +1,18 @@
+<!-- 
+{{ bid | json }}
+ -->
+
+<p><b>Bidder: </b>{{ bid?.bidder.username }}</p>  
+<p><b>Price: </b>{{ bid?.price }}</p>  
+
+
+<div *ngFor='let negotiation of bid?.negotiations; let i = index' [attr.data-index]='i'>
+    <ul>
+      <li> 
+        <app-bid-message [negotiation]="negotiation"></app-bid-message>
+      </li>
+    </ul>
+  </div>
+  
+
+  <app-bid-message-form (onNewMessage)="newMessage($event)"></app-bid-message-form>

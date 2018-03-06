@@ -13,8 +13,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class TaskDetailsPageComponent implements OnInit {
 
-  constructor(private authService: AuthService, private tasksService: TasksService, private route: ActivatedRoute, 
-    private router: Router) { }
+  constructor(private authService: AuthService, private tasksService: TasksService, private route: ActivatedRoute, private router: Router) { }
 
   taskId;
   task;
@@ -35,13 +34,6 @@ export class TaskDetailsPageComponent implements OnInit {
   }
 
   newBid(event) {
-    // this.route.params
-    //   .subscribe((params) => this.taskId = String(params['id']));
-
-    // this.tasksService 
-    //   .getTask(this.taskId)
-    //   .then((task) => this.task = task);
-
     this.tasksService.createNewBid(event, this.task)
       .then((bid) => {
         this.bid = bid;

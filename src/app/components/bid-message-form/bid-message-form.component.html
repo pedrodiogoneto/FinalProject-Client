@@ -1,0 +1,19 @@
+<p>
+  bid-message-form works!
+</p>
+
+
+<form (ngSubmit)="handleClickNewMessage(form)" #form="ngForm" novalidate>
+    <div>
+      <label for="message">New Message</label>
+      <input type="text" name="message" [(ngModel)]="message" #messageField="ngModel" required [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && messageField.errors">
+        <p *ngIf="messageField.errors.required" class="validation">message required</p>
+      </div>
+    </div>  
+    <button type="submit">Submit</button>
+  </form>
+
+
+
+  
