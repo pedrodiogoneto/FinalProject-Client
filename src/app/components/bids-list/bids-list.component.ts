@@ -11,6 +11,7 @@ export class BidsListComponent implements OnInit {
   constructor() { }
 
   @Input() task: any;
+  @Input() user: any;
   ngOnInit() {
   }
 

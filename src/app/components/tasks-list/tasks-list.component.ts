@@ -10,6 +10,7 @@ import { TasksPageComponent } from '../../pages/tasks-page/tasks-page.component'
 export class TasksListComponent implements OnInit {
 
   @Input() tasks: any;
+  @Input() user: any;
 
   constructor() { }
 

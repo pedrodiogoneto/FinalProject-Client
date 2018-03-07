@@ -5,8 +5,13 @@
 <p><b>Bidder: </b>{{ bid?.bidder.username }}</p>  
 <p><b>Price: </b>{{ bid?.price }}</p>  
 
+<!-- {{ task | json }} -->
+<h1></h1>
 
 <div *ngFor='let negotiation of bid?.negotiations; let i = index' [attr.data-index]='i'>
+    <!-- {{ bid | json }} -->
+  <h1></h1>
+  <!-- {{ bid.negotiations | json }} -->
     <ul>
       <li> 
         <app-bid-message [negotiation]="negotiation"></app-bid-message>

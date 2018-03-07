@@ -26,7 +26,10 @@ export class TaskDetailsPageComponent implements OnInit {
 
     this.tasksService 
       .getTask(this.taskId)
-      .then((task) => this.task = task);
+      .then((task) => {
+        this.task = task;
+        console.log(task);
+      });
 
     this.authService
       .me()

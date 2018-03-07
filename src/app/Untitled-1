@@ -1,0 +1,14 @@
+
+<div *ngFor="let bid of task?.bids, index as i">
+    <div *ngIf="bid.bidder._id === user?._id || task?.owner._id === user?._id">
+
+        <app-bids-list [task]="task"></app-bids-list>
+    </div>
+
+    <div *ngIf="task?.owner._id !== user?._id && bid.bidder._id !== user?._id">
+
+        <h2> New Bid </h2>
+        <app-bid-form (onNewBid)="newBid($event)"></app-bid-form>
+    </div>
+
+</div>

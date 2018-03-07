@@ -1,7 +1,7 @@
 
   <div *ngFor='let task of tasks; let i = index' [attr.data-index]='i'>
     <ul>
-      <li> <app-task-card [task]="task" ></app-task-card></li>
+      <li> <app-task-card [task]="task" [user]="user"></app-task-card></li>
     </ul>
   </div>
   

@@ -5,9 +5,12 @@
 <div class="small-container">
     <ul>
       <li *ngFor='let bid of task?.bids, index as i'> 
-        <b>Bids: User </b> {{ task?.bids[i].bidder.username }} 
-        <b>Price </b> {{ task?.bids[i].price }}
-        <a [routerLink]="['bids', bid._id]">Answear</a>
+        <p *ngIf="task.bids[i].bidder._id === user?._id || task?.owner._id === user?._id">
+          <b>Bids: User </b> {{ task?.bids[i].bidder.username }} 
+          <b>Price </b> {{ task?.bids[i].price }}
+          <!-- <p *ngIf="task?.owner._id === user?._id || task.bids[i].bidder._id === user?._id">  -->
+            <a [routerLink]="['bids', bid._id]">Answear</a>
+          </p>
       </li>
     </ul>
   </div>

@@ -34,7 +34,7 @@ export class BidNegotiationPageComponent implements OnInit {
         .getTask(this.taskId)
         .then((task: any) => {
           this.task = task;
-          this.bid = task.bids.find((bid) => bid._id = this.bidId) 
+          this.bid = task.bids.find((bid) => bid._id === this.bidId) 
         });
     });
 
@@ -48,7 +48,7 @@ export class BidNegotiationPageComponent implements OnInit {
     this.tasksService.createNewMessage(event, this.taskId, this.bidId)
       .then((bid) => {
         this.bid = bid;
-        this.router.navigate(['/']);
+        this.router.navigate(['/tasks-list']);
       });
   }
 
