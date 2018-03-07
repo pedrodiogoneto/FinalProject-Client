@@ -1,0 +1,20 @@
+.wrap-container {
+    display: flex;
+}
+
+.container-esq {
+    flex: 1 0 45%;
+    /* margin: auto; */
+
+}
+
+.container-dir {
+    flex: 1 0 45%;
+    /* margin: auto; */
+}
+
+.hp-image {
+    width: 100%;
+    
+
+}

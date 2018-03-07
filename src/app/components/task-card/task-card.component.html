@@ -1,16 +1,22 @@
 
 <div class="small-container">
-  <ul>
-    <li><a [routerLink]="['/tasks', task._id]"><b>Title: </b> {{ task.title }} </a></li>
-    <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task.owner.username }} </a></li>
 
-    <li *ngFor='let bid of task.bids; index as i'> 
-    
-    <p *ngIf="task.owner._id === user._id || bid.bidder._id === user._id"> 
-      <b>Bids: User </b> {{ task.bids[i].bidder.username }} 
-      <b>Price </b> {{ task.bids[i].price }}
-    </p>
-    
-    </li>
-  </ul>
+  <div class="image-container">
+    <img src="/../assets/blabla.jpg" alt="card" class="card-image">
+  </div>
+
+  <div class="task-info">
+    <div><a [routerLink]="['/tasks', task._id]" class="task-title"> {{ task.title }} </a></div>
+      
+    <div class="task-owner-spacing">
+      <a [routerLink]="['/user', task.owner._id]" class="task-owner">Posted by: {{ task.owner.username }} </a>
+    </div>
+
+    <div *ngFor='let bid of task.bids; index as i'>
+      <p *ngIf="task.owner._id === user._id || bid.bidder._id === user._id"> 
+        Bids:
+        {{ task.bids[i].bidder.username }}
+        {{ task.bids[i].price }} €
+    </div>
+  </div>
 </div>

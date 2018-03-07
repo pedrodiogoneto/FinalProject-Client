@@ -1,3 +1,33 @@
 .small-container {
-    border-style: solid;
+    border: 1px solid darkgray;
+    display: flex;
+    background-color: white;
+}
+
+.card-image {
+    width: 100%;
+}
+
+.image-container {
+    flex: 1 0 50%;
+}
+
+.task-info {
+    flex: 1 0 50%;
+    margin: 10px;
+}
+
+.task-title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.task-owner {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.task-owner-spacing {
+    margin-bottom: 18px;    
 }

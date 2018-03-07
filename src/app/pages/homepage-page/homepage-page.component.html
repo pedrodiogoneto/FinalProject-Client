@@ -1,5 +1,25 @@
-<a href="/tasks-list">TaskList</a>
-<a href="/new-task">new-task</a>
-<div *ngIf="user">
-  <a [routerLink]="['/user', user._id]"> My Profile </a>
+<div class="wrap-container">
+
+
+  <div class="container-esq">
+    
+    <img src="/../assets/student.jpeg" alt="student" class="hp-image">
+
+    <h2><a href="/tasks-list">I need Money!</a></h2>
+
+  </div>
+
+  <div class="container-dir">
+
+    <img src="/../assets/business.jpg" alt="business" class="hp-image">
+    
+    <h2><a href="/new-task">I need Help!</a></h2>
+      
+  </div>
+  
 </div>
+
+<!-- <div *ngIf="user">
+  <a [routerLink]="['/user', user._id]"> My Profile </a>
+</div> -->
+

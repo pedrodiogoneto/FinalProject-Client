@@ -1,7 +1,7 @@
 
 /* ---- reset ---- */
 
-html {
+  html {
     box-sizing: border-box;
   }
   *, *:before, *:after {
@@ -13,14 +13,27 @@ html {
     height: 0;
   }
   
+  li {
+    list-style-type: none;
+  }
   
-  /* ---- typography ---- */
+  a {
+    text-decoration: none;
+    color: #111;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: rgb(147, 147, 151);
+  }
+  
+  /* ---- typography ---- */ 
   
   body {
     color: #111;
-    font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 147%;
+    font-family: 'Open Sans', sans-serif;
   }
   
   h1 {}
@@ -70,4 +83,9 @@ html {
   }
   
   /* ---- components ---- */
+
+  header a {
+    color: white;
+    text-transform: uppercase;
+  }
   
