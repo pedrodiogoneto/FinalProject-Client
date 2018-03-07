@@ -48,7 +48,8 @@ export class BidNegotiationPageComponent implements OnInit {
     this.tasksService.createNewMessage(event, this.taskId, this.bidId)
       .then((bid) => {
         this.bid = bid;
-        this.router.navigate(['/tasks-list']);
+        // this.router.navigate(['/tasks-list']);
+        window.location.reload();
       });
   }
 
