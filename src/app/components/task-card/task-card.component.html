@@ -2,12 +2,12 @@
 <div class="small-container">
 
   <div class="image-container">
-    <img src="/../assets/blabla.jpg" alt="card" class="card-image">
+    <img src="{{task.image}}"  alt="card" class="card-image">
   </div>
 
   <div class="task-info">
     <div><a [routerLink]="['/tasks', task._id]" class="task-title"> {{ task.title }} </a></div>
-      
+      {{ task.image }}
     <div class="task-owner-spacing">
       <a [routerLink]="['/user', task.owner._id]" class="task-owner">Posted by: {{ task.owner.username }} </a>
     </div>

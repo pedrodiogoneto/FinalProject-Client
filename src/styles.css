@@ -53,13 +53,13 @@
   #site-header {
     padding: 30px 0;
     color: white;
-    background: #111;
+    background: darkslategrey;
   }
   
   #site-footer {
     color: white;
-    padding: 60px 0;
-    background: #111;
+    padding: 40px 0;
+    background: darkslategrey;
   }
   
   #site-main {

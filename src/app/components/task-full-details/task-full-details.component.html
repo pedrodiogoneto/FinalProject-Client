@@ -7,6 +7,10 @@
     <ul>
       <li> <b>Title: </b> {{ task?.title }}</li>
       <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task?.owner.username }} </a></li>
+      <li>{{ task?.status }}</li>
+      <li>{{ task?.location }}</li>
+      <li>{{ task?.category }}</li>
+      <li>{{ task?.budget }}</li>
     </ul>
   </div>
 </div>

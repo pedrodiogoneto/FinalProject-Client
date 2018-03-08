@@ -6,11 +6,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./new-task-form.component.css']
 })
 export class NewTaskFormComponent implements OnInit {
-  newTask: any;
+
+  title: any;
+  location: any;
+  category: any;
+  budget: any;
+  image: any;
   processing = false;
   feedbackEnabled = false;
 
-  @Output() onNewTask = new EventEmitter<string>(); 
+  @Output() onNewTask = new EventEmitter<object>(); 
   constructor() { }
 
   ngOnInit() {
@@ -19,8 +24,15 @@ export class NewTaskFormComponent implements OnInit {
   handleClickNewTask(form) {
     this.feedbackEnabled = true
     if (form.valid) {
+      const data = {
+        title: this.title,
+        location: this.location,
+        category: this.category,
+        budget: this.budget,
+        image: this.image
+      }
       this.processing = true;
-      this.onNewTask.emit(this.newTask)
+      this.onNewTask.emit(data)
       this.processing = false;
       this.feedbackEnabled = false;
     } else {

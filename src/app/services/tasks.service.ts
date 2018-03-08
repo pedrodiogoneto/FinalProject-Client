@@ -23,13 +23,31 @@ export class TasksService {
       withCredentials: true
     };
     const newData = {
-      title: data
+      title: data.title,
+      location: data.location,
+      category: data.category,
+      budget: data.budget,
+      image:data.image
     }
     console.log(newData)
     return this.httpClient.post(`${apiUrl}`, newData, options)
     .toPromise();
-
   }
+
+  ///////////////
+  // createNew(data) {
+  //   const options = {
+  //     withCredentials: true
+  //   };
+  //   const newData = {
+  //     title: data
+  //   }
+  //   console.log(newData)
+  //   return this.httpClient.post(`${apiUrl}`, newData, options)
+  //   .toPromise();
+
+  // }
+  //////////////
 
   getTaskByUser(id) {
     const options = {

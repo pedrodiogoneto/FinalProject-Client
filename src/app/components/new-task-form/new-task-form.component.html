@@ -1,10 +1,41 @@
 <form (ngSubmit)="handleClickNewTask(form)" #form="ngForm" novalidate>
   <div>
     <label for="title">Title</label>
-    <input type="text" name="title" [(ngModel)]="newTask" #titleField="ngModel" required [disabled]="processing"/>
+    <input type="text" name="title" [(ngModel)]="title" #titleField="ngModel" required [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && titleField.errors">
       <p *ngIf="titleField.errors.required" class="validation">title required</p>
     </div>
-  </div>  
+  </div>
+  <div>
+    <label for="location">Location</label>
+    <input type="text" name="location" [(ngModel)]="location" #locationField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && locationField.errors">
+      <p *ngIf="locationField.errors.required" class="validation">location required</p>
+    </div>
+  </div>
+  <div>
+    <label for="category">Category</label>
+    <input type="text" name="category" [(ngModel)]="category" #categoryField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && categoryField.errors">
+      <p *ngIf="categoryField.errors.required" class="validation">category required</p>
+    </div>
+  </div>
+  <div>
+    <label for="budget">Budget</label>
+    <input type="text" name="budget" [(ngModel)]="budget" #budgetField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && budgetField.errors">
+      <p *ngIf="budgetField.errors.required" class="validation">budget required</p>
+    </div>
+  </div>
+  <div>
+    <label for="image">Image</label>
+    <input type="text" name="image" [(ngModel)]="image" #imageField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && imageField.errors">
+      <p *ngIf="imageField.errors.required" class="validation">image required</p>
+    </div>
+  </div>
+  
+
+<!--        -->
   <button type="submit">Submit</button>
 </form>

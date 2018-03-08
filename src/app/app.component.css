@@ -1,0 +1,14 @@
+#header-options {
+    float: right;
+}
+
+.logo {
+    float: left;
+    font-size: 24px;
+    margin: 3px;
+}
+
+#site-main {
+    min-width: 80%;
+    
+}
