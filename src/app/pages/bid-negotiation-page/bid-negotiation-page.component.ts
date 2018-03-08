@@ -58,9 +58,6 @@ export class BidNegotiationPageComponent implements OnInit {
     // .then((task) => {
     //   this.task = task;
     window.location.reload();
-    })
-  };
-
-
+    }
 
 }
