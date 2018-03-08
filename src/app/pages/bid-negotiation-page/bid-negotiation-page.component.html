@@ -13,22 +13,18 @@
   <!-- {{ bid.negotiations | json }} -->
 
   <div *ngIf="negotiation.sender._id === task.owner._id">
-    <div [ngClass]="align-left">
-      <ul>
-        <li> 
+    <div [ngClass]="'align-left'">
+      <div>
           <app-bid-message [negotiation]="negotiation" [task]="task" [bid]="bid"></app-bid-message>
-        </li>
-      </ul>
+      </div>
     </div>
   </div>
 
   <div *ngIf="negotiation.sender._id === bid.bidder._id">
-      <div [ngClass]="align-right">
-        <ul>
-          <li> 
-            <app-bid-message [negotiation]="negotiation" [task]="task" [bid]="bid"></app-bid-message>
-          </li>
-        </ul>
+      <div [ngClass]="'align-right'">
+          <div>
+              <app-bid-message [negotiation]="negotiation" [task]="task" [bid]="bid"></app-bid-message>
+          </div>
       </div>
     </div>
 
@@ -40,5 +36,5 @@
   <div *ngIf="user?._id === task?.owner._id">
   <h3>Owner Options</h3>
   <p>Task Status: {{ task?.status }}</p>
-  <button (aceptTask)="aceptTask()">Acept Bid</button>
+  <button (click)="aceptTask()">Acept Bid</button>
 </div>

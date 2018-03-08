@@ -53,4 +53,14 @@ export class BidNegotiationPageComponent implements OnInit {
       });
   }
 
+  aceptTask() {
+    this.tasksService.onAceptTask(this.taskId,this.bidId);
+    // .then((task) => {
+    //   this.task = task;
+    window.location.reload();
+    })
+  };
+
+
+
 }

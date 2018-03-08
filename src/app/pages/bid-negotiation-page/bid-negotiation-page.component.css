@@ -1,9 +1,22 @@
 .align-left {
-    float: left;
-    text-align: left
+    text-align: left;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    background-color: #DBE2EF;
+    border-radius : 15px;
+    border: 1px solid black;
+
+
 }
 
 .align-right {
-    float: right;
     text-align: right;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius : 15px;
+    border: 1px solid black;
+
 }

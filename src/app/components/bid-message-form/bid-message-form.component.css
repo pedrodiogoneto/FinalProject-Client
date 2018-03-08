@@ -1,0 +1,16 @@
+button {
+    color: white;
+    width: 15%;
+    padding: 5px;
+    border-radius: 10%;
+    background-color: #112D4E;
+  }
+
+.small-container {
+    -webkit-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    width: 75%;
+    margin: auto;
+    
+}

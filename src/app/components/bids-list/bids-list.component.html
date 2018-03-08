@@ -6,11 +6,10 @@
     <ul>
       <li *ngFor='let bid of task?.bids, index as i'> 
         <p *ngIf="task.bids[i].bidder._id === user?._id || task?.owner._id === user?._id">
-          <b>Bids: User </b> {{ task?.bids[i].bidder.username }} 
+          <b>User </b> {{ task?.bids[i].bidder.username }} 
           <b>Price </b> {{ task?.bids[i].price }} €
-          <!-- <p *ngIf="task?.owner._id === user?._id || task.bids[i].bidder._id === user?._id">  -->
-            <a [routerLink]="['bids', bid._id]">Answear</a>
-          </p>
+          <a [routerLink]="['bids', bid._id]">Answear</a>
+        </p>
       </li>
     </ul>
   </div>

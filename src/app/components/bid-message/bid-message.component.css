@@ -1,0 +1,8 @@
+.small-container {
+    border-radius : 15px;
+    border: 1px solid black;
+    -webkit-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    padding: 10px;
+}

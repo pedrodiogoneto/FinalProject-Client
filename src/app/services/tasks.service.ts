@@ -88,6 +88,17 @@ export class TasksService {
     .toPromise();
   }
 
+  onAceptTask(taskId, bidId) {
+    const options = {
+      withCredentials: true
+    };
+    const newData = {
+      status: "Accepted",
+    }
+    return this.httpClient.post(`${apiUrl}/${taskId}/bids/${bidId}/accept`, newData,options)
+    .toPromise();
+  }
+
   // getBidOfTask(taskId, bidId) {
   //   const options = {
   //     withCredentials: true

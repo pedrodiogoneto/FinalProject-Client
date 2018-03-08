@@ -1,6 +1,6 @@
 .small-container {
     display: flex;
-    background-color: white;
+    background-color: #DBE2EF;
     border-radius : 15px;
     border: 1px solid black;
     -webkit-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);

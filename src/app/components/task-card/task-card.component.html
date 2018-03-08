@@ -12,7 +12,7 @@
     <div class="task-owner-spacing">
       <a [routerLink]="['/user', task.owner._id]" class="task-owner">Posted by: {{ task.owner.username }} </a>
     </div>
-
+    <div>Status: {{ task.status }}</div>
     <div *ngFor='let bid of task.bids; index as i'>
       <p *ngIf="task.owner._id === user._id || bid.bidder._id === user._id"> 
         Bids:

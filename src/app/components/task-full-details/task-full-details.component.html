@@ -5,12 +5,11 @@
 <div *ngIf="task">
 <div class="small-container">
     <ul>
-      <li> <b>Title: </b> {{ task?.title }}</li>
       <li><a [routerLink]="['/user', task.owner._id]"><b>Owner: </b> {{ task?.owner.username }} </a></li>
-      <li>{{ task?.status }}</li>
-      <li>{{ task?.location }}</li>
-      <li>{{ task?.category }}</li>
-      <li>{{ task?.budget }}</li>
+      <li><b>Status: </b> {{ task?.status }}</li>
+      <li><b>location: </b> {{ task?.location }}</li>
+      <li><b>Category: </b> {{ task?.category }}</li>
+      <li><b>Budget: </b> {{ task?.budget }}</li>
     </ul>
   </div>
 </div>
