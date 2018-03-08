@@ -12,14 +12,30 @@
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
     <label>Password</label>
-    <input type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="4" [disabled]="processing"/>
+    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && passwordField.errors">
       <p *ngIf="passwordField.errors.required" class="validation">password required</p>
       <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
     </div>
   </div>
 
-  <!-- <app-file-upload></app-file-upload> -->
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && locationField.errors}">
+      <label>Location</label>
+      <input type="text" name="location" [(ngModel)]="location" #locationField="ngModel" required minlength="1" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && locationField.errors">
+        <p *ngIf="locationField.errors.required" class="validation">location required</p>
+        <p *ngIf="locationField.errors.minlength" class="validation">location is too short</p>
+      </div>
+    </div>
+
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && contactField.errors}">
+        <label>Contact</label>
+        <input type="text" name="contact" [(ngModel)]="contact" #contactField="ngModel" required minlength="4" [disabled]="processing"/>
+        <div *ngIf="feedbackEnabled && contactField.errors">
+          <p *ngIf="contactField.errors.required" class="validation">contact required</p>
+          <p *ngIf="contactField.errors.minlength" class="validation">contact is too short</p>
+        </div>
+      </div>
 
   <div class="field submit">
     <button type="submit" [disabled]="processing">Signup</button>

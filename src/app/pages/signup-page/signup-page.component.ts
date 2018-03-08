@@ -14,6 +14,8 @@ export class SignupPageComponent implements OnInit {
   processing = false;
   username: String;
   password: String;
+  contact: Number;
+  location: String;
 
   constructor(private authService:  AuthService, private router: Router) { }
 
@@ -25,7 +27,10 @@ export class SignupPageComponent implements OnInit {
     this.feedbackEnabled = true;
     const data = {
       username: this.username,
-      password: this.password
+      password: this.password,
+      contact: this.contact,
+      location: this.location
+
     }
     if (form.valid) {
       this.processing = true;
