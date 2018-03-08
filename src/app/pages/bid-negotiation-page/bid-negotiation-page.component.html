@@ -3,7 +3,7 @@
  -->
 
 <p><b>Bidder: </b>{{ bid?.bidder.username }}</p>  
-<p><b>Price: </b>{{ bid?.price }}</p> € 
+<p><b>Price: </b>{{ bid?.price }} € </p> 
 
 <!-- {{ task | json }} -->
 
@@ -11,12 +11,34 @@
 <div *ngFor='let negotiation of bid?.negotiations; let i = index' [attr.data-index]='i'>
     <!-- {{ bid | json }} -->
   <!-- {{ bid.negotiations | json }} -->
-    <ul>
-      <li> 
-        <app-bid-message [negotiation]="negotiation"></app-bid-message>
-      </li>
-    </ul>
+
+  <div *ngIf="negotiation.sender._id === task.owner._id">
+    <div [ngClass]="align-left">
+      <ul>
+        <li> 
+          <app-bid-message [negotiation]="negotiation" [task]="task" [bid]="bid"></app-bid-message>
+        </li>
+      </ul>
+    </div>
   </div>
-  
+
+  <div *ngIf="negotiation.sender._id === bid.bidder._id">
+      <div [ngClass]="align-right">
+        <ul>
+          <li> 
+            <app-bid-message [negotiation]="negotiation" [task]="task" [bid]="bid"></app-bid-message>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+</div>
+
 
   <app-bid-message-form (onNewMessage)="newMessage($event)"></app-bid-message-form>
+
+  <div *ngIf="user?._id === task?.owner._id">
+  <h3>Owner Options</h3>
+  <p>Task Status: {{ task?.status }}</p>
+  <button (aceptTask)="aceptTask()">Acept Bid</button>
+</div>

@@ -1,5 +1,7 @@
 .wrap-container {
     display: flex;
+    margin: auto;
+
 }
 
 .container-esq {
@@ -14,7 +16,15 @@
 }
 
 .hp-image {
-    width: 100%;
-    
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    display: block;
+    border-radius: 15px;
+    border: 1px solid black;
 
+}
+
+.center {
+    text-align: center;
 }

@@ -1,15 +1,27 @@
 .small-container {
-    border: 1px solid darkgray;
     display: flex;
     background-color: white;
+    border-radius : 15px;
+    border: 1px solid black;
+    -webkit-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    box-shadow: 13px 10px 36px -10px rgba(0,0,0,0.75);
+    width: 75%;
+    margin: auto;
 }
 
 .card-image {
     width: 100%;
+    border-radius: 15px;
+
 }
 
 .image-container {
     flex: 1 0 50%;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 30%;
+
 }
 
 .task-info {

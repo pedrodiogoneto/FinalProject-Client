@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BidMessageComponent implements OnInit {
 
   @Input() negotiation: any;
+  @Input() task: any;
+  @Input() bid: any;
   constructor() { }
 
   ngOnInit() {

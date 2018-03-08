@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { error } from 'util';
+import { NgClass } from '@angular/common';
 
 
 @Component({
@@ -48,7 +49,6 @@ export class BidNegotiationPageComponent implements OnInit {
     this.tasksService.createNewMessage(event, this.taskId, this.bidId)
       .then((bid) => {
         this.bid = bid;
-        // this.router.navigate(['/tasks-list']);
         window.location.reload();
       });
   }
